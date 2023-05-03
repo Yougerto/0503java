@@ -26,7 +26,6 @@ public class JDBC01 {
 				
 			}else {
 				System.out.println("update");
-				
 			}
 			
 			
