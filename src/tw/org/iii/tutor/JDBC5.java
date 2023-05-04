@@ -7,8 +7,9 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.Properties;
-import com.mysql.cj.xdevapi.JsonArray;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -52,6 +53,12 @@ public class JDBC5 {
 		prop.put("password", "root");
 		Connection conn = DriverManager.getConnection(
 				"jdbc:mysql://localhost/iii", prop);
+
+		Statement stmt = conn.createStatement();
+		// 1. delete from food
+		stmt.executeUpdate("DELETE FROM foood");
+		// 2. ALTER TABLE food AUTO_INCREMENT = 1
+		stmt.executeUpdate("ALTER TABLE foood AUTO_INCREMENT = 1");
 		
 		String sql = "INSERT INTO foood (name,address,tel,picurl,lat,lng)" + 
 				" VALUES (?,?,?,?,?,?)";
