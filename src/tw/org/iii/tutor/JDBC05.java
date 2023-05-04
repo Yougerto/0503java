@@ -13,7 +13,7 @@ import java.util.Properties;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class JDBC5 {
+public class JDBC05 {
 
 	public static void main(String[] args) {
 		// network
