@@ -25,11 +25,13 @@ public class JDBC12 {
 		
 		Properties prop = new Properties();
 		prop.put("user", USER); prop.put("password", PASSWORD);
+	
 		try {
 			Connection conn = DriverManager.getConnection(URL, prop);
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			ResultSet rs = pstmt.executeQuery();
-
+//			ResultSet rs = pstmt.executeQuery();
+			
+			ResultSet rs = conn.prepareStatement(sql).executeQuery();
 			JSONStringer js = new JSONStringer();
 			JSONWriter jw = js.array();
 			int rank = 1;
