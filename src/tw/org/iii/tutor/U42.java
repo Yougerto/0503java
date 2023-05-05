@@ -1,5 +1,5 @@
 package tw.org.iii.tutor;
 
-public class MyPanel {
+public class U42 {
 
 }
